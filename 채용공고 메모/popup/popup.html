@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>채용공고 메모</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wtd-popup">
+    <header class="wtd-popup-header">
+      <h1>채용공고 메모 <span id="wtd-count" class="wtd-popup-count"></span></h1>
+    </header>
+
+    <div class="wtd-popup-search">
+      <input type="text" id="wtd-search" placeholder="공고명, 회사명, 메모 검색..." />
+    </div>
+
+    <nav class="wtd-popup-filters">
+      <button class="wtd-popup-filter active" data-filter="all">전체</button>
+      <button class="wtd-popup-filter" data-filter="important">★ 중요</button>
+      <button class="wtd-popup-filter" data-filter="applied">✅ 지원완료</button>
+    </nav>
+
+    <div class="wtd-popup-sites" id="wtd-sites"></div>
+
+    <ul id="wtd-list" class="wtd-popup-list"></ul>
+
+    <div id="wtd-empty" class="wtd-popup-empty" style="display:none">
+      저장된 메모가 없습니다
+    </div>
+
+    <footer class="wtd-popup-footer">
+      <button id="wtd-export" class="wtd-popup-export">데이터 내보내기</button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

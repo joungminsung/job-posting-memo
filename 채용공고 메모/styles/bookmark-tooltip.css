@@ -1,0 +1,111 @@
+/* 북마크 카드 뱃지/툴팁 — SVG 아이콘 */
+
+.wtd-memo-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.wtd-memo-badge svg {
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.wtd-memo-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 230px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid #e1e2e3;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  font-size: 13px;
+  color: #333;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.wtd-memo-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: #fff;
+}
+
+.wtd-memo-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-bottom-color: #e1e2e3;
+}
+
+.wtd-memo-tooltip-text {
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: pre-wrap;
+  color: #333;
+}
+
+.wtd-memo-tooltip-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  font-size: 12px;
+  color: #3366FF;
+  font-weight: 500;
+}
+
+.wtd-memo-tooltip-meta svg {
+  vertical-align: middle;
+}
+
+.wtd-memo-tooltip-sep {
+  color: #d5d5d5;
+  margin: 0 2px;
+}
+
+/* 뷰포트 아래로 넘칠 때 위로 뒤집기 */
+.wtd-memo-tooltip--above {
+  top: auto;
+  bottom: calc(100% + 8px);
+}
+
+.wtd-memo-tooltip--above::after {
+  bottom: auto;
+  top: 100%;
+  border-bottom-color: transparent;
+  border-top-color: #fff;
+}
+
+.wtd-memo-tooltip--above::before {
+  bottom: auto;
+  top: 100%;
+  border-bottom-color: transparent;
+  border-top-color: #e1e2e3;
+}

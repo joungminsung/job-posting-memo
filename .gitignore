@@ -1,0 +1,14 @@
+# Markdown / docs
+*.md
+docs/
+
+# Archives
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/

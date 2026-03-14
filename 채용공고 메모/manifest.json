@@ -1,0 +1,81 @@
+{
+  "manifest_version": 3,
+  "name": "채용공고 메모",
+  "description": "채용 공고 페이지에서 메모·별점·지원 추적을 한 번에. 10개 주요 채용 플랫폼을 지원합니다.",
+  "version": "1.0.0",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://www.wanted.co.kr/*",
+    "*://www.saramin.co.kr/*",
+    "*://www.jobkorea.co.kr/*",
+    "*://www.incruit.com/*",
+    "*://job.incruit.com/*",
+    "*://www.catch.co.kr/*",
+    "*://jasoseol.com/*",
+    "*://www.jasoseol.com/*",
+    "*://www.jumpit.co.kr/*",
+    "*://jumpit.co.kr/*",
+    "*://jumpit.saramin.co.kr/*",
+    "*://www.rocketpunch.com/*",
+    "*://rocketpunch.com/*",
+    "*://www.work24.go.kr/*",
+    "*://work24.go.kr/*",
+    "*://www.gojobs.go.kr/*",
+    "*://gojobs.go.kr/*",
+    "*://www.narailter.go.kr/*",
+    "*://narailter.go.kr/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.wanted.co.kr/*",
+        "*://www.saramin.co.kr/*",
+        "*://www.jobkorea.co.kr/*",
+        "*://www.incruit.com/*",
+        "*://job.incruit.com/*",
+        "*://www.catch.co.kr/*",
+        "*://jasoseol.com/*",
+        "*://www.jasoseol.com/*",
+        "*://www.jumpit.co.kr/*",
+        "*://jumpit.co.kr/*",
+        "*://jumpit.saramin.co.kr/*",
+        "*://www.rocketpunch.com/*",
+        "*://rocketpunch.com/*",
+        "*://www.work24.go.kr/*",
+        "*://work24.go.kr/*",
+        "*://www.gojobs.go.kr/*",
+        "*://gojobs.go.kr/*",
+        "*://www.narailter.go.kr/*",
+        "*://narailter.go.kr/*"
+      ],
+      "js": [
+        "content-scripts/site-registry.js",
+        "content-scripts/storage-helper.js",
+        "content-scripts/router-observer.js",
+        "content-scripts/memo-input.js",
+        "content-scripts/apply-detector.js",
+        "content-scripts/bookmark-tooltip.js",
+        "content-scripts/read-marker.js"
+      ],
+      "css": [
+        "styles/memo-input.css",
+        "styles/bookmark-tooltip.css",
+        "styles/read-marker.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

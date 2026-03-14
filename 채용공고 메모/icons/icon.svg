@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B8DEF"/>
+      <stop offset="100%" style="stop-color:#3366FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="128" height="128" rx="28" ry="28" fill="url(#bg)"/>
+
+  <!-- 메모지 -->
+  <rect x="28" y="24" width="64" height="80" rx="8" ry="8" fill="#FFFFFF"/>
+
+  <!-- 접힌 모서리 -->
+  <path d="M76 24 L92 24 L92 40 Q92 24 76 24 Z" fill="#FFFFFF"/>
+  <path d="M76 24 L76 36 Q76 42 82 42 L92 42 L92 40 L82 40 Q78 40 78 36 L78 24 Z" fill="#C5D4F7"/>
+
+  <!-- 텍스트 줄 -->
+  <rect x="38" y="48" width="36" height="3" rx="1.5" fill="#B8CCFA"/>
+  <rect x="38" y="58" width="28" height="3" rx="1.5" fill="#B8CCFA"/>
+  <rect x="38" y="68" width="32" height="3" rx="1.5" fill="#B8CCFA"/>
+
+  <!-- 연필 -->
+  <g transform="translate(78, 108) rotate(-135)">
+    <rect x="-3.5" y="0" width="7" height="38" rx="1" fill="#FFD54F"/>
+    <rect x="-3.5" y="0" width="7" height="38" rx="1" fill="none" stroke="#E6B800" stroke-width="0.6"/>
+    <rect x="-3.5" y="30" width="7" height="5" fill="#FF8F00"/>
+    <polygon points="-3.5,0 3.5,0 0,-8" fill="#F5E0B8"/>
+    <polygon points="-1.5,-2 1.5,-2 0,-8" fill="#555"/>
+    <rect x="-3.5" y="35" width="7" height="3" rx="1" fill="#FF7675"/>
+  </g>
+
+  <!-- 별 (우하단) -->
+  <circle cx="98" cy="98" r="18" fill="#FF6161"/>
+  <polygon points="98,85 101.2,93.5 110,93.5 103,98.5 105.5,107 98,102 90.5,107 93,98.5 86,93.5 94.8,93.5"
+           fill="#FFFFFF"/>
+</svg>

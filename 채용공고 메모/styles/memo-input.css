@@ -1,0 +1,411 @@
+/* 우측 사이드바 메모 UI — 원티드 네이티브 스타일 */
+
+.wtd-memo-box {
+  margin-top: 0;
+  padding: 20px;
+  border: 1px solid #e1e2e3;
+  border-radius: 8px;
+  background: #fff;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+}
+
+/* 헤더 */
+.wtd-memo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.wtd-memo-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.wtd-memo-title svg {
+  color: #3366FF;
+}
+
+/* 별점 — SVG 기반 */
+.wtd-memo-stars {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.wtd-memo-star {
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.12s;
+  line-height: 0;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.wtd-memo-star svg {
+  fill: none;
+  stroke: #d5d5d5;
+  transition: fill 0.15s, stroke 0.15s;
+}
+
+.wtd-memo-star:hover {
+  transform: scale(1.15);
+}
+
+.wtd-memo-star.wtd-memo-star--filled svg {
+  fill: #3366FF;
+  stroke: #3366FF;
+}
+
+/* Textarea */
+.wtd-memo-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #e1e2e3;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.wtd-memo-textarea:focus {
+  border-color: #3366FF;
+}
+
+.wtd-memo-textarea::placeholder {
+  color: #999;
+}
+
+/* 카운터 */
+.wtd-memo-counter {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+/* 버튼 행 — 지원하기 버튼 스타일 */
+.wtd-memo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.wtd-memo-btn {
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  letter-spacing: -0.3px;
+}
+
+.wtd-memo-btn-save {
+  flex: 1;
+  background: #3366FF;
+  color: #fff;
+}
+
+.wtd-memo-btn-save:hover {
+  background: #2b57d9;
+}
+
+.wtd-memo-btn-delete {
+  width: 56px;
+  background: #fff;
+  color: #999;
+  border: 1px solid #e1e2e3;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.wtd-memo-btn-delete:hover {
+  border-color: #ff5a5a;
+  color: #ff5a5a;
+}
+
+/* 저장 상태 */
+.wtd-memo-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #999;
+  margin-top: 10px;
+}
+
+.wtd-memo-status svg {
+  color: #999;
+}
+
+.wtd-memo-status-flash {
+  color: #3366FF;
+}
+
+.wtd-memo-status-flash svg {
+  color: #3366FF;
+}
+
+/* 지원 완료 표시 */
+.wtd-memo-apply-status {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #f4f7ff;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3366FF;
+}
+
+.wtd-memo-apply-status svg {
+  flex-shrink: 0;
+  color: #3366FF;
+}
+
+/* ═══════════════════════════════════════
+   인라인 트리거 (사람인 별 옆 등)
+   ═══════════════════════════════════════ */
+
+.wtd-inline-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid #e1e2e3;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: #555;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  vertical-align: top;
+  height: auto;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.wtd-inline-trigger:hover {
+  border-color: #3366FF;
+  box-shadow: 0 2px 8px rgba(51, 102, 255, 0.1);
+  color: #3366FF;
+}
+
+.wtd-inline-trigger svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.wtd-inline-trigger-label {
+  font-weight: 500;
+}
+
+.wtd-inline-trigger-stars {
+  display: inline-flex;
+  gap: 1px;
+  margin-left: 2px;
+}
+
+.wtd-inline-trigger-star {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.wtd-inline-trigger-star svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: #d5d5d5;
+}
+
+.wtd-inline-trigger-star--filled svg {
+  fill: #3366FF;
+  stroke: #3366FF;
+}
+
+/* 메모 존재 인디케이터 (파란 점) */
+.wtd-inline-trigger-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3366FF;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   플로팅 메모 버튼 + 패널 (범용 폴백)
+   ═══════════════════════════════════════ */
+
+.wtd-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483640;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #3366FF;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(51, 102, 255, 0.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.wtd-float-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(51, 102, 255, 0.4);
+}
+
+.wtd-float-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 메모 존재 뱃지 */
+.wtd-float-btn--has-memo::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  background: #FF5A5F;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* 플로팅 패널 */
+.wtd-float-panel {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  z-index: 2147483641;
+  width: 320px;
+  max-height: 420px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e1e2e3;
+  overflow: hidden;
+  display: none;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.wtd-float-panel--open {
+  display: block;
+  animation: wtd-float-slide-up 0.2s ease-out;
+}
+
+@keyframes wtd-float-slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.wtd-float-panel-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 8px 0;
+}
+
+.wtd-float-panel-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wtd-float-panel-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* 플로팅 내부의 메모 박스 — 테두리/마진 리셋 */
+.wtd-float-panel .wtd-memo-box {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 12px 16px 16px;
+}
+
+/* ═══════════════════════════════════════
+   사람인 우측 사이드바 메모 박스
+   ═══════════════════════════════════════ */
+.wrap_right_recruit .wtd-memo-box,
+.area_aside .wtd-memo-box {
+  margin-top: 16px;
+  border: 1px solid #e1e2e3;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.wrap_right_recruit .wtd-memo-title svg,
+.area_aside .wtd-memo-title svg {
+  color: #2B7DE9;
+}
+
+.wrap_right_recruit .wtd-memo-btn-save,
+.area_aside .wtd-memo-btn-save {
+  background: #2B7DE9;
+}
+
+.wrap_right_recruit .wtd-memo-btn-save:hover,
+.area_aside .wtd-memo-btn-save:hover {
+  background: #2468c7;
+}
+
+.wrap_right_recruit .wtd-memo-star.wtd-memo-star--filled svg,
+.area_aside .wtd-memo-star.wtd-memo-star--filled svg {
+  fill: #2B7DE9;
+  stroke: #2B7DE9;
+}
+
+.wrap_right_recruit .wtd-memo-status-flash,
+.area_aside .wtd-memo-status-flash {
+  color: #2B7DE9;
+}
+
+.wrap_right_recruit .wtd-memo-status-flash svg,
+.area_aside .wtd-memo-status-flash svg {
+  color: #2B7DE9;
+}
+
+.wrap_right_recruit .wtd-memo-apply-status,
+.area_aside .wtd-memo-apply-status {
+  background: #eef4fd;
+  color: #2B7DE9;
+}
+
+.wrap_right_recruit .wtd-memo-apply-status svg,
+.area_aside .wtd-memo-apply-status svg {
+  color: #2B7DE9;
+}

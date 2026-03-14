@@ -1,0 +1,42 @@
+/* ── 읽음 표시 오버레이 ── */
+
+.wtd-read-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 10px 10px;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  border-radius: inherit;
+}
+
+.wtd-read-overlay__label {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wtd-read-overlay__label svg {
+  flex-shrink: 0;
+}
+
+/* 썸네일 영역 밖으로 넘치지 않도록 */
+.wtd-read-thumb {
+  overflow: hidden;
+}
+
+/* 호버 시 오버레이 숨기기 — thumb 컨테이너에 적용 */
+.wtd-read-thumb:hover .wtd-read-overlay {
+  opacity: 0;
+}
