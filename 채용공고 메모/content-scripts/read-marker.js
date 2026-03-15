@@ -35,6 +35,8 @@
       if (readJobs[key]) return; // 이미 읽음
       readJobs[key] = Date.now();
       await chrome.storage.local.set({ [READ_STORAGE_KEY]: readJobs });
+      // 읽음 표시도 다른 기기에 동기화
+      window.__wtdMemo?.schedulePush?.();
     } catch {
       // 무시
     }

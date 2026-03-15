@@ -235,3 +235,97 @@ body {
   border-color: #3366FF;
   color: #fff;
 }
+
+/* 동기화 상태 바 */
+.wtd-sync-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #888;
+}
+
+.wtd-sync-bar:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wtd-sync-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wtd-sync-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.wtd-sync-dot--connected { background: #48bb78; }
+.wtd-sync-dot--syncing { background: #ecc94b; animation: wtd-pulse 1s infinite; }
+.wtd-sync-dot--error { background: #fc8181; }
+.wtd-sync-dot--off { background: #cbd5e0; }
+
+@keyframes wtd-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.wtd-sync-btn {
+  padding: 4px 10px;
+  border: 1px solid #e1e2e3;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 11px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wtd-sync-btn:hover {
+  border-color: #3366FF;
+  color: #3366FF;
+}
+
+.wtd-sync-btn--primary {
+  background: #3366FF;
+  border-color: #3366FF;
+  color: #fff;
+}
+
+.wtd-sync-btn--primary:hover {
+  background: #2952cc;
+}
+
+/* 동기화 안내 배너 */
+.wtd-sync-banner {
+  background: #f0f4ff;
+  border: 1px solid #d0dcff;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.wtd-sync-banner-title {
+  font-weight: 600;
+  color: #3366FF;
+  margin-bottom: 4px;
+}
+
+.wtd-sync-banner-desc {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.wtd-sync-banner-note {
+  font-size: 11px;
+  color: #999;
+}
