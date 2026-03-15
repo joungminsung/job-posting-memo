@@ -193,12 +193,12 @@
       status.textContent = '';
     });
 
-    // storage 변경 감지 (apply-detector 연동)
-    const storageListener = (changes) => {
-      if (!changes[window.__wtdMemo.STORAGE_KEY]) return;
-      const newMemos = changes[window.__wtdMemo.STORAGE_KEY].newValue || {};
+    // storage 변경 감지 (apply-detector 연동, 다른 기기 sync 포함)
+    const storageListener = (changes, areaName) => {
+      if (areaName !== 'local') return;
       const key = window.__wtdMemo.makeKey(site.id, jobId);
-      const updated = newMemos[key];
+      if (!changes[key]) return;
+      const updated = changes[key].newValue;
       if (updated) {
         data = updated;
         updateApplyUI(updated);
@@ -271,11 +271,10 @@
     ensureFloatingPanel(jobId, memoData, meta, false);
 
     // storage 변경 시 트리거 UI 갱신
-    const triggerStorageListener = (changes) => {
-      if (!changes[window.__wtdMemo.STORAGE_KEY]) return;
-      const newMemos = changes[window.__wtdMemo.STORAGE_KEY].newValue || {};
+    const triggerStorageListener = (changes, areaName) => {
+      if (areaName !== 'local') return;
       const key = window.__wtdMemo.makeKey(site.id, jobId);
-      if (newMemos[key]) updateTrigger(newMemos[key]);
+      if (changes[key]?.newValue) updateTrigger(changes[key].newValue);
     };
     chrome.storage.onChanged.addListener(triggerStorageListener);
     storageListeners.push(triggerStorageListener);

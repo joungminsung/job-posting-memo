@@ -1,5 +1,4 @@
-# Markdown / docs
-*.md
+# Docs (README.md는 제외)
 docs/
 
 # Archives

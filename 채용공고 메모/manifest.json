@@ -3,7 +3,11 @@
   "name": "채용공고 메모",
   "description": "채용 공고 페이지에서 메모·별점·지원 추적을 한 번에. 10개 주요 채용 플랫폼을 지원합니다.",
   "version": "1.0.0",
-  "permissions": ["storage"],
+  "permissions": ["storage", "identity"],
+  "oauth2": {
+    "client_id": "46626815320-uo8s2rsh31tnkqjjrlrhi95jldvlro11.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/drive.appdata"]
+  },
   "host_permissions": [
     "*://www.wanted.co.kr/*",
     "*://www.saramin.co.kr/*",
